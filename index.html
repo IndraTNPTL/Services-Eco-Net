@@ -36,11 +36,7 @@
           <a href="#galerie">Avant/Après</a>
           <a href="#avis">Avis</a>
           <a href="#contact">Contact</a>
-          <a
-            class="cta"
-            href="mailto:services.eco.net@outlook.com?subject=Demande%20de%20devis%20-%20Services%20Eco%20Net"
-            >Devis gratuit</a
-          >
+          <a class="cta demande-devis" id="cta-nav-devis">Devis gratuit</a>
         </nav>
       </div>
     </header>
@@ -50,8 +46,9 @@
         <div class="hero-text">
           <h1>Services Eco Net</h1>
           <p>
-            Spécialiste du <strong>lessivage de façade</strong> et du
-            <strong>traitement des mousses & algues</strong>.
+            Spécialiste du <strong>nettoyage extérieur</strong> et de l'<strong
+              >entretien paysager</strong
+            >.
           </p>
           <ul class="bullets">
             <li>Produits <em>éco‑responsables</em></li>
@@ -60,10 +57,10 @@
           </ul>
           <div class="actions">
             <!-- !AJOUTER CTA CI-DESSOUS EN HERO -->
-            <button class="btn call" href="tel:+33696520051">
+            <button class="btn call" href="tel:+596696520051">
               <span>📞 06 96 52 00 51</span>
             </button>
-            <button class="btn services" href="#services">
+            <button class="btn services demande-devis" href="#services">
               <span>Demander un devis</span>
             </button>
           </div>
@@ -74,42 +71,54 @@
       </div>
     </section>
 
-    <section id="services" class="section">
+    <section id="hero-video" class="section">
       <div class="container">
-        <h2>Nos services</h2>
-        <div class="grid three">
-          <article class="card">
-            <h3>Lessivage & nettoyage de façades</h3>
-            <p>
-              Désincrustation en douceur des salissures, dépoussiérage et
-              rinçage maîtrisé pour redonner éclat et homogénéité.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Traitement anti‑mousses & anti‑algues</h3>
-            <p>
-              Application ciblée de biocides éco‑compatibles pour éliminer
-              lichens, algues et micro‑organismes et retarder leur réapparition.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Entretien préventif</h3>
-            <p>
-              Programme d’entretien régulier afin de protéger vos surfaces et
-              prolonger la durée de vie de vos revêtements.
-            </p>
-          </article>
-        </div>
-        <div class="badges">
-          <span>✅ Expertise & savoir‑faire</span>
-          <span>🌿 Produits respectueux</span>
-          <span>⚡ Intervention rapide</span>
-          <span>📝 Devis gratuit</span>
+        <div class="hero-video-container">
+          <video
+            src="/assets/videoNettoyage1.mp4"
+            muted
+            autoplay
+            loop
+            title="Nettoyage de façade"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></video>
         </div>
       </div>
     </section>
 
-    <section id="galerie" class="section alt">
+    <section id="services" class="section alt">
+      <div class="container">
+        <h2>Nos services</h2>
+        <div class="grid three">
+          <article class="card">
+            <h3>Traitement de l'encrassement biologique</h3>
+            <p>
+              Désincrustation en douceur des salissures et rinçage maîtrisé pour
+              redonner éclat et homogénéité.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Nettoyage de panneaux solaires et publicitaires</h3>
+            <p>
+              Application ciblée de dégraissants pour éliminer lichens, algues
+              et micro‑organismes et retarder leur réapparition.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Entretien d'espaces verts et d'élagage</h3>
+            <p>De la remise en état à l'entretien régulier.</p>
+          </article>
+        </div>
+        <div class="badges">
+          <span>✅ Expertise & savoir‑faire</span>
+          <span>⚡ Intervention rapide</span>
+          <span class="demande-devis">📝 Devis gratuit</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerie" class="section">
       <div class="container">
         <h2>Nettoyage de façade - Avant / Après</h2>
         <!-- <p class="muted">
@@ -136,18 +145,29 @@
             <figcaption>Après</figcaption>
           </figure>
           <figure>
-            <img src="assets/avant2.jpg" alt="Avant nettoyage façade" />
+            <div class="image-container">
+              <img
+                src="/assets/avantPrefecture.jpeg"
+                alt="Avant nettoyage prefecture"
+              />
+            </div>
+
             <figcaption>Avant</figcaption>
           </figure>
           <figure>
-            <img src="assets/apres2.jpg" alt="Après nettoyage façade" />
+            <div class="image-container">
+              <img
+                src="/assets/apresPrefecture.jpeg"
+                alt="Après nettoyage prefecture"
+              />
+            </div>
             <figcaption>Après</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section id="avis" class="section">
+    <section id="avis" class="section alt">
       <div class="container">
         <h2>Avis de clients</h2>
         <div class="grid two">
@@ -156,8 +176,8 @@
             »<cite> — M. Bernard</cite>
           </blockquote>
           <blockquote class="quote">
-            « Plus aucune mousse sur le mur nord, façade comme neuve ! Merci
-            Kévin ! »<cite> — Mme Aline</cite>
+            « Plus aucune mousse sur le mur nord, façade comme neuve ! Merci !
+            »<cite> — Mme Aline</cite>
           </blockquote>
         </div>
       </div>
@@ -166,15 +186,16 @@
     <section id="contact" class="section contact">
       <div class="container contact-grid">
         <div>
-          <h2>Contacts</h2>
-          <p>
-            Besoin d’un devis ? Écrivez‑nous une courte description de votre
-            façade (surface, matériau) et joignez des photos.
+          <h2 class="intro-contact">Contact</h2>
+          <p class="intro-contact">
+            Besoin d’un devis ? <br />
+            Écrivez‑nous une courte description de votre façade (surface,
+            matériau) et joignez des photos !
           </p>
           <p>
-            <strong>Téléphone :</strong>
+            <strong>On s'appelle :</strong>
             <a href="tel:+33696520051">06 96 52 00 51</a><br />
-            <strong>Email :</strong>
+            <strong>On s'écrit :</strong>
             <a href="mailto:services.eco.net@outlook.com"
               >services.eco.net@outlook.com</a
             >
@@ -188,18 +209,52 @@
             <a class="btn outline" href="tel:+33696520051">Appeler</a>
           </div> -->
         </div>
-        <div class="contact-card">
+        <button class="contact-card demande-devis">
           <!-- <img src="assets/logo.jpg" alt="Logo S.E.N." /> -->
-          <p>Je demande mon devis GRATUIT!</p>
-        </div>
+          <p>Je demande mon Devis GRATUIT!</p>
+        </button>
       </div>
     </section>
+    <div id="modal-overlay" class="modal-overlay" aria-hidden="true">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button
+          class="modal-close"
+          id="close-modal-btn"
+          aria-label="Fermer la popin"
+        >
+          &times;
+        </button>
+        <iframe
+          data-tally-src="https://tally.so/embed/xXXaYk?alignLeft=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="708"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Demande de devis"
+        ></iframe>
+      </div>
+    </div>
 
     <footer class="footer">
-      <div class="container">
+      <div class="container footer-inner">
         <p>
           © <span id="year"></span> Services Eco Net — Tous droits réservés.
         </p>
+        <div class="footer-links">
+          <button type="button" class="footer-link js-open-legal">
+            Mentions légales
+          </button>
+          <button type="button" class="footer-link js-open-privacy">
+            Politique de confidentialité
+          </button>
+        </div>
       </div>
     </footer>
 

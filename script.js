@@ -11,20 +11,82 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
   });
 });
 
+// ! POPIN CONTENT
+const d = document,
+  w = "https://tally.so/widgets/embed.js",
+  v = function () {
+    "undefined" != typeof Tally
+      ? Tally.loadEmbeds()
+      : d
+          .querySelectorAll("iframe[data-tally-src]:not([src])")
+          .forEach(function (e) {
+            e.src = e.dataset.tallySrc;
+          });
+  };
+if ("undefined" != typeof Tally) v();
+else if (d.querySelector('script[src="' + w + '"]') == null) {
+  const s = d.createElement("script");
+  (s.src = w), (s.onload = v), (s.onerror = v), d.body.appendChild(s);
+}
+
 //! HEADER SCROLLING ANIMATION
-let lastScrollTop = 0;
 const topbar = document.querySelector(".topbar");
 
-window.addEventListener("scroll", () => {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+let lastScrollY = window.scrollY;
+const HIDE_THRESHOLD = 80; // px avant d'activer le hide
 
-  if (scrollTop > lastScrollTop) {
-    // Scrolling down
+window.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
+
+  // Si on n'a pas encore assez scrollé, on ne cache jamais la topbar
+  if (currentScrollY < HIDE_THRESHOLD) {
+    topbar.classList.remove("hide");
+    lastScrollY = currentScrollY;
+    return;
+  }
+
+  // Si on scrolle vers le bas → cacher la topbar
+  if (currentScrollY > lastScrollY) {
     topbar.classList.add("hide");
   } else {
-    // Scrolling up
+    // Si on scrolle vers le haut → réafficher la topbar
     topbar.classList.remove("hide");
   }
 
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scroll
+  lastScrollY = currentScrollY;
+});
+
+// ! POPIN OPEN/CLOSE
+// Récupération des éléments
+const openModalBtn = document.getElementById("open-modal-btn");
+const closeModalBtn = document.getElementById("close-modal-btn");
+const modalOverlay = document.getElementById("modal-overlay");
+const demandeDevisButtons = document.querySelectorAll(".demande-devis");
+
+// Ouvrir la popin
+function openModal() {
+  modalOverlay?.classList.add("is-visible");
+  modalOverlay?.setAttribute("aria-hidden", "false");
+  document.body.classList.add("body-no-scroll");
+}
+
+// Fermer la popin
+function closeModal() {
+  modalOverlay?.classList.remove("is-visible");
+  modalOverlay?.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("body-no-scroll");
+}
+
+demandeDevisButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    openModal();
+  });
+});
+
+closeModalBtn?.addEventListener("click", () => {
+  closeModal();
+});
+
+modalOverlay?.addEventListener("click", () => {
+  closeModal();
 });

@@ -29,6 +29,8 @@ img {
 }
 
 .image-container {
+  width: 545px;
+  height: 355px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -36,9 +38,10 @@ img {
 }
 
 .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  width: 545px;
-  height: 355px;
 }
 
 .container {
@@ -85,16 +88,34 @@ nav a {
   color: var(--ink);
   font-weight: 600;
   letter-spacing: 0.3px;
+  cursor: pointer;
 }
 nav a:hover {
   color: var(--primary);
 }
+
 nav .cta {
   margin-left: 20px;
   padding: 10px 14px;
   border-radius: 10px;
   background: linear-gradient(90deg, var(--secondary), var(--primary));
   color: #fff;
+}
+
+nav .cta:hover {
+  color: #fff;
+}
+
+.demande-devis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.demande-devis:hover {
+  transform: scale(1.03);
 }
 
 .hero {
@@ -209,31 +230,19 @@ nav .cta {
   }
 }
 
-/* .btn.services {
-  background: transparent;
-  border: 2px solid var(--primary);
-  color: var(--primary);
-  cursor: pointer;
-}
-
-.btn.services:hover {
-  background: var(--primary);
-  color: #fff;
-} */
-
 .btn.services {
   background: transparent;
   border: 2px solid var(--primary);
   color: var(--primary);
   cursor: pointer;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 
 .btn.services:hover {
   background: var(--primary);
   color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  /* transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); */
 }
 
 @keyframes vibrate {
@@ -278,17 +287,31 @@ nav .cta {
   gap: 20px;
 }
 .card {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
   background: #fff;
   border-radius: var(--radius);
-  padding: 37px;
+  padding: 30px;
   box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
 }
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+}
+
 .badges {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 20px;
 }
+
 .badges span {
   background: #eef7ff;
   border: 1px solid #d8eaff;
@@ -297,10 +320,24 @@ nav .cta {
   font-weight: 600;
 }
 
+.badges .demande-devis {
+  cursor: pointer;
+}
+
+.hero-video-container {
+  width: 100%;
+  height: 500px;
+}
+
+.hero-video-container video {
+  width: 100%;
+  height: 100%;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 40px;
 }
 figure {
   margin: 0;
@@ -328,6 +365,7 @@ figcaption {
   border-radius: 12px;
   box-shadow: var(--shadow);
   margin: 0;
+  white-space: nowrap;
 }
 .quote cite {
   display: block;
@@ -339,12 +377,19 @@ figcaption {
 .contact {
   background: linear-gradient(180deg, #ffffff, #f8fffb);
 }
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
-  gap: 22px;
+  gap: 50px;
   align-items: center;
 }
+
+.intro-contact,
+h2.intro-contact {
+  margin: 0 0 10px 0;
+}
+
 .contact-card {
   font-size: 2rem;
   letter-spacing: 0.3px;
@@ -359,7 +404,10 @@ figcaption {
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: none;
+  cursor: pointer;
 }
+
 .contact-card img {
   width: 120px;
   margin: 0 auto 10px auto;
@@ -371,6 +419,78 @@ figcaption {
   padding: 22px 0;
   color: var(--muted);
   text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* !POPIN */
+
+.body-no-scroll {
+  overflow: hidden;
+}
+
+/* Overlay (fond sombre) */
+.modal-overlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background: rgba(0, 0, 0, 0.6);
+  display: none; /* caché par défaut */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Classe pour afficher la popin */
+.modal-overlay.is-visible {
+  display: flex;
+}
+
+/* Contenu de la popin */
+.modal {
+  background: #fff;
+  max-width: 57rem;
+  width: 90%;
+  padding: 0 24px 20px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Bouton de fermeture (X) */
+.modal-close {
+  position: absolute;
+  top: 17px;
+  right: 23px;
+  border: none;
+  background: transparent;
+  font-size: 29px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* WebKit browsers (Chrome, Edge, Safari) */
+.modal::-webkit-scrollbar {
+  width: 8px; /* thickness */
+}
+
+.modal::-webkit-scrollbar-track {
+  background: #f0f0f0; /* track color (behind the thumb) */
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+  background: #222; /* darker on hover */
+}
+
+/* Firefox */
+.modal {
+  scrollbar-width: thin; /* auto | thin | none */
+  scrollbar-color: #444 #f0f0f0; /* thumb | track */
 }
 
 @media (max-width: 840px) {
