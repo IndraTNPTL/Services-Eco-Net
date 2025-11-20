@@ -8,10 +8,13 @@
     </title>
     <meta
       name="description"
-      content="Services Eco Net (S.E.N.) — Spécialiste du lessivage de façade et du traitement des mousses et algues. Devis gratuit. Intervention rapide et éco‑responsable."
+      content="Services Eco Net (S.E.N.) — Spécialiste du lessivage de façade et du traitement des mousses et algues. Devis gratuit. Intervention rapide et éco-responsable."
     />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="assets/logo.jpg" />
+    <link rel="canonical" href="https://www.netlify.com/" />
+    <meta name="robots" content="index,follow" />
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -21,200 +24,229 @@
         "telephone": "+33696520051",
         "email": "services.eco.net@outlook.com",
         "url": "https://example.com/",
-        "description": "Lessivage de façades et traitement anti-mousses/algues. Produits éco‑responsables, intervention rapide, devis gratuit."
+        "description": "Lessivage de façades et traitement anti-mousses/algues. Produits éco-responsables, intervention rapide, devis gratuit."
       }
     </script>
   </head>
   <body>
+    <!-- NAV OVERLAY FOR MOBILE MENU -->
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+    <!-- HEADER / TOPBAR -->
     <header class="topbar">
-      <div class="container">
+      <div class="container topbar-inner">
         <a class="brand" href="#accueil">
           <img src="assets/logo.jpg" alt="Logo Services Eco Net" />
         </a>
-        <nav>
+
+        <!-- BURGER BUTTON -->
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
+
+        <!-- MAIN NAV -->
+        <nav id="main-nav" class="nav" aria-label="Navigation principale">
           <a href="#services">Services</a>
           <a href="#galerie">Avant/Après</a>
           <a href="#avis">Avis</a>
           <a href="#contact">Contact</a>
-          <a class="cta demande-devis" id="cta-nav-devis">Devis gratuit</a>
+          <button class="cta demande-devis" id="cta-nav-devis" type="button">
+            Demander un devis
+          </button>
         </nav>
       </div>
     </header>
 
-    <section id="accueil" class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1>Services Eco Net</h1>
-          <p>
-            Spécialiste du <strong>nettoyage extérieur</strong> et de l'<strong
-              >entretien paysager</strong
-            >.
-          </p>
-          <ul class="bullets">
-            <li>Produits <em>éco‑responsables</em></li>
-            <li>Intervention rapide et soignée</li>
-            <li>Devis gratuit et personnalisé</li>
-          </ul>
-          <div class="actions">
-            <!-- !AJOUTER CTA CI-DESSOUS EN HERO -->
-            <button class="btn call" href="tel:+596696520051">
-              <span>📞 06 96 52 00 51</span>
-            </button>
-            <button class="btn services demande-devis" href="#services">
-              <span>Demander un devis</span>
-            </button>
+    <main>
+      <!-- HERO -->
+      <section id="accueil" class="hero">
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <h1>Services Eco Net</h1>
+            <p>
+              Spécialiste du <strong>nettoyage extérieur</strong> et de
+              l'<strong>entretien paysager</strong>.
+            </p>
+            <ul class="bullets">
+              <li>Réponse sous 24h</li>
+              <li>Intervention rapide et soignée</li>
+              <li>Devis 100 % gratuit, sans engagement</li>
+            </ul>
+            <div class="actions">
+              <a class="btn call" href="tel:+33696520051">
+                <span>📞 06 96 52 00 51</span>
+              </a>
+              <button class="btn services demande-devis" type="button">
+                <span>Demander un devis</span>
+              </button>
+            </div>
+          </div>
+          <div class="hero-card">
+            <img src="assets/logo.jpg" alt="Services Eco Net" />
           </div>
         </div>
-        <div class="hero-card">
-          <img src="assets/logo.jpg" alt="Services Eco Net" />
+      </section>
+
+      <!-- HERO VIDEO -->
+      <section id="hero-video" class="section">
+        <div class="container">
+          <div class="hero-video-container">
+            <video
+              src="assets/videoNettoyage1.mp4"
+              muted
+              autoplay
+              loop
+              title="Nettoyage de façade"
+              playsinline
+            ></video>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="section alt">
+        <div class="container">
+          <h2>Nos services</h2>
+          <div class="grid three">
+            <article class="card">
+              <h3>Traitement de l'encrassement biologique</h3>
+              <p>
+                Désincrustation en douceur des salissures et rinçage maîtrisé
+                pour redonner éclat et homogénéité.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Nettoyage de panneaux solaires et publicitaires</h3>
+              <p>
+                Application ciblée de dégraissants pour éliminer lichens, algues
+                et micro-organismes et retarder leur réapparition.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Entretien d'espaces verts et d'élagage</h3>
+              <p>De la remise en état à l'entretien régulier.</p>
+            </article>
+          </div>
+          <div class="badges">
+            <span>✅ Expertise & savoir-faire</span>
+            <span>⚡ Intervention rapide</span>
+            <span class="demande-devis">📝 Devis gratuit</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIE -->
+      <section id="galerie" class="section">
+        <div class="container">
+          <h2>Nettoyage - Avant/Après</h2>
+
+          <!-- Existing static gallery -->
+          <div class="gallery">
+            <figure>
+              <div class="image-container">
+                <img
+                  src="https://i.postimg.cc/qqt9k1f9/Whats-App-Image-2025-11-14-at-22-22-12.jpg"
+                  alt="Avant nettoyage façade"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>Avant</figcaption>
+            </figure>
+            <figure>
+              <div class="image-container">
+                <img
+                  src="https://i.postimg.cc/VLFL2NR5/Whats-App-Image-2025-11-14-at-22-22-12-(1).jpg"
+                  alt="Après nettoyage façade"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>Après</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- BEFORE/AFTER SLIDER -->
+      <div class="ba-wrapper">
+        <div class="ba-slider" aria-label="Comparaison avant / après">
+          <img
+            src="assets/avantPrefecture.jpeg"
+            alt="Façade avant nettoyage"
+            class="ba-img ba-img--before"
+          />
+          <div class="ba-after">
+            <img
+              src="assets/apresPrefecture.jpeg"
+              alt="Façade après nettoyage"
+              class="ba-img ba-img--after"
+            />
+          </div>
+          <div class="ba-handle">
+            <span class="ba-handle-icon">⇆</span>
+          </div>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            class="ba-range"
+            aria-label="Faire glisser pour voir avant/après"
+          />
         </div>
       </div>
-    </section>
 
-    <section id="hero-video" class="section">
-      <div class="container">
-        <div class="hero-video-container">
-          <video
-            src="/assets/videoNettoyage1.mp4"
-            muted
-            autoplay
-            loop
-            title="Nettoyage de façade"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></video>
+      <!-- AVIS -->
+      <section id="avis" class="section alt">
+        <div class="container">
+          <h2>Avis de clients</h2>
+          <div class="grid two">
+            <blockquote class="quote">
+              « Intervention rapide et résultat impeccable sur notre maison.
+              »<cite> — M. Bernard</cite>
+            </blockquote>
+            <blockquote class="quote">
+              « Plus aucune mousse sur le mur nord, façade comme neuve ! Merci !
+              »<cite> — Mme Aline</cite>
+            </blockquote>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="services" class="section alt">
-      <div class="container">
-        <h2>Nos services</h2>
-        <div class="grid three">
-          <article class="card">
-            <h3>Traitement de l'encrassement biologique</h3>
-            <p>
-              Désincrustation en douceur des salissures et rinçage maîtrisé pour
-              redonner éclat et homogénéité.
+      <!-- CONTACT -->
+      <section id="contact" class="section contact">
+        <div class="container contact-grid">
+          <div>
+            <h2 class="intro-contact">Contact</h2>
+            <p class="intro-contact">
+              Besoin d’un devis ? <br />
+              Écrivez-nous une courte description de votre façade (surface,
+              matériau) et joignez des photos !
             </p>
-          </article>
-          <article class="card">
-            <h3>Nettoyage de panneaux solaires et publicitaires</h3>
             <p>
-              Application ciblée de dégraissants pour éliminer lichens, algues
-              et micro‑organismes et retarder leur réapparition.
+              <strong>On s'appelle :</strong>
+              <a href="tel:+33696520051">06 96 52 00 51</a><br />
+              <strong>On s'écrit :</strong>
+              <a href="mailto:services.eco.net@outlook.com"
+                >services.eco.net@outlook.com</a
+              >
             </p>
-          </article>
-          <article class="card">
-            <h3>Entretien d'espaces verts et d'élagage</h3>
-            <p>De la remise en état à l'entretien régulier.</p>
-          </article>
+          </div>
+          <button class="contact-card demande-devis" type="button">
+            <p>Je demande mon Devis!</p>
+          </button>
         </div>
-        <div class="badges">
-          <span>✅ Expertise & savoir‑faire</span>
-          <span>⚡ Intervention rapide</span>
-          <span class="demande-devis">📝 Devis gratuit</span>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section id="galerie" class="section">
-      <div class="container">
-        <h2>Nettoyage de façade - Avant / Après</h2>
-        <!-- <p class="muted">
-          Photos d’illustration. Remplacez par vos réalisations.
-        </p> -->
-        <div class="gallery">
-          <figure>
-            <div class="image-container">
-              <img
-                src="https://i.postimg.cc/qqt9k1f9/Whats-App-Image-2025-11-14-at-22-22-12.jpg"
-                alt="Avant nettoyage façade"
-              />
-            </div>
-            <figcaption>Avant</figcaption>
-          </figure>
-          <figure>
-            <div class="image-container">
-              <img
-                src="https://i.postimg.cc/VLFL2NR5/Whats-App-Image-2025-11-14-at-22-22-12-(1).jpg"
-                alt="Après nettoyage façade"
-              />
-            </div>
-
-            <figcaption>Après</figcaption>
-          </figure>
-          <figure>
-            <div class="image-container">
-              <img
-                src="/assets/avantPrefecture.jpeg"
-                alt="Avant nettoyage prefecture"
-              />
-            </div>
-
-            <figcaption>Avant</figcaption>
-          </figure>
-          <figure>
-            <div class="image-container">
-              <img
-                src="/assets/apresPrefecture.jpeg"
-                alt="Après nettoyage prefecture"
-              />
-            </div>
-            <figcaption>Après</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section id="avis" class="section alt">
-      <div class="container">
-        <h2>Avis de clients</h2>
-        <div class="grid two">
-          <blockquote class="quote">
-            « Intervention rapide et résultat impeccable sur notre maison.
-            »<cite> — M. Bernard</cite>
-          </blockquote>
-          <blockquote class="quote">
-            « Plus aucune mousse sur le mur nord, façade comme neuve ! Merci !
-            »<cite> — Mme Aline</cite>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact">
-      <div class="container contact-grid">
-        <div>
-          <h2 class="intro-contact">Contact</h2>
-          <p class="intro-contact">
-            Besoin d’un devis ? <br />
-            Écrivez‑nous une courte description de votre façade (surface,
-            matériau) et joignez des photos !
-          </p>
-          <p>
-            <strong>On s'appelle :</strong>
-            <a href="tel:+33696520051">06 96 52 00 51</a><br />
-            <strong>On s'écrit :</strong>
-            <a href="mailto:services.eco.net@outlook.com"
-              >services.eco.net@outlook.com</a
-            >
-          </p>
-          <!-- <div class="actions">
-            <a
-              class="btn"
-              href="mailto:services.eco.net@outlook.com?subject=Demande%20de%20devis%20-%20Services%20Eco%20Net"
-              >Demander un devis</a
-            >
-            <a class="btn outline" href="tel:+33696520051">Appeler</a>
-          </div> -->
-        </div>
-        <button class="contact-card demande-devis">
-          <!-- <img src="assets/logo.jpg" alt="Logo S.E.N." /> -->
-          <p>Je demande mon Devis GRATUIT!</p>
-        </button>
-      </div>
-    </section>
+    <!-- MODAL DEVIS -->
     <div id="modal-overlay" class="modal-overlay" aria-hidden="true">
       <div
         class="modal"
@@ -222,6 +254,8 @@
         aria-modal="true"
         aria-labelledby="modal-title"
       >
+        <h2 id="modal-title" class="sr-only">Demande de devis</h2>
+
         <button
           class="modal-close"
           id="close-modal-btn"
@@ -242,21 +276,36 @@
       </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer-inner">
         <p>
           © <span id="year"></span> Services Eco Net — Tous droits réservés.
         </p>
         <div class="footer-links">
-          <button type="button" class="footer-link js-open-legal">
-            Mentions légales
-          </button>
-          <button type="button" class="footer-link js-open-privacy">
-            Politique de confidentialité
-          </button>
+          <a href="legal.html#mentions-legales" class="footer-link">
+            Mentions légales et Politique de confidentialité
+          </a>
         </div>
       </div>
     </footer>
+
+    <!-- MOBILE STICKY BAR -->
+    <div class="mobile-sticky-bar">
+      <a
+        href="tel:+33696520051"
+        class="mobile-sticky-btn mobile-sticky-btn--call"
+      >
+        <span class="phone-icon">📞</span> Appeler
+      </a>
+
+      <button
+        type="button"
+        class="mobile-sticky-btn mobile-sticky-btn--devis demande-devis"
+      >
+        Demander un devis
+      </button>
+    </div>
 
     <script src="script.js"></script>
   </body>
