@@ -149,7 +149,7 @@
           <h2>Nettoyage - Avant/Après</h2>
 
           <!-- Existing static gallery -->
-          <div class="gallery">
+          <!-- <div class="gallery">
             <figure>
               <div class="image-container">
                 <img
@@ -170,9 +170,38 @@
               </div>
               <figcaption>Après</figcaption>
             </figure>
-          </div>
+          </div> -->
         </div>
       </section>
+
+      <!-- BEFORE/AFTER SLIDER -->
+      <div class="ba-wrapper">
+        <div class="ba-slider" aria-label="Comparaison avant / après">
+          <img
+            src="https://i.postimg.cc/qqt9k1f9/Whats-App-Image-2025-11-14-at-22-22-12.jpg"
+            alt="Façade avant nettoyage"
+            class="ba-img ba-img--before"
+          />
+          <div class="ba-after">
+            <img
+              src="/assets/apresMaison.jpeg"
+              alt="Façade après nettoyage"
+              class="ba-img ba-img--after"
+            />
+          </div>
+          <div class="ba-handle">
+            <span class="ba-handle-icon">⇆</span>
+          </div>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            class="ba-range"
+            aria-label="Faire glisser pour voir avant/après"
+          />
+        </div>
+      </div>
 
       <!-- BEFORE/AFTER SLIDER -->
       <div class="ba-wrapper">

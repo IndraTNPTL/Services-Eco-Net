@@ -524,7 +524,8 @@ figcaption {
 }
 
 .ba-handle {
-  position: absolute;
+  display: none;
+  /* position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -537,7 +538,7 @@ figcaption {
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  z-index: 4;
+  z-index: 4; */
 }
 
 .ba-handle-icon {
