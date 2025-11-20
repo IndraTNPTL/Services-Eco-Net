@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://serviceseconet.netlify.app/sitemap.xml
